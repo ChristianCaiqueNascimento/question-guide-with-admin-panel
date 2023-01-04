@@ -4,6 +4,7 @@
 <div class="container">
     <hr>
     <h2>Categorias</h2>
+    <a class="btn btn-success" href="/admin/categories/new">Criar nova categoria</a>
     <hr>
     <table class="table table-bordered">
         <thead>
@@ -20,7 +21,15 @@
                 <th><%= categorie.id %></th>
                 <th><%- categorie.title %></th>
                 <th><%- categorie.slug %></th>
-                <th></th>
+                <th>
+                    <button class="btn-warning btn">Editar</button>
+
+                    <form action="/categories/delete" method="POST" style="display: inline;">
+                        <input type="hidden" name="id" value="<%= categorie.id %>">
+                        <button class="btn-danger btn">Excluir</button>
+                    </form>
+                   
+                </th>
             </tr>
             <% }) %>
         </tbody>
