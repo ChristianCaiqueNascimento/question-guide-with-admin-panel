@@ -19,6 +19,6 @@ const Article = connection.define('articles', {
 Category.hasMany(Article); // UMA Categoria tem muitos artigos
 Article.belongsTo(Category); // Um artigo pertence a uma categoria
 
-//Article.sync({force: true}) // Metodo para criar a tabla no banco com o relacionamento
+// Article.sync({force: true}) // Metodo para criar a tabla no banco com o relacionamento
 
 module.exports = Article;
