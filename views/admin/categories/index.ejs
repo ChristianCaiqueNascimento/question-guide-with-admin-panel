@@ -19,10 +19,10 @@
             <% categories.forEach(categorie => { %>
             <tr>
                 <th><%= categorie.id %></th>
-                <th><%- categorie.title %></th>
-                <th><%- categorie.slug %></th>
+                <th><%= categorie.title %></th>
+                <th><%= categorie.slug %></th>
                 <th>
-                    <button class="btn-warning btn">Editar</button>
+                    <a href="/admin/categories/edit/<%= categorie.id %>" class="btn btn-warning">Editar</a>
 
                     <form action="/categories/delete" method="POST" style="display: inline;" onsubmit="confirmSelection(event, this)">
                         <input type="hidden" name="id" value="<%= categorie.id %>">
